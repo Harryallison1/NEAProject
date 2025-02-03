@@ -1,0 +1,43 @@
+{% extends 'introduction/base.html' %}
+
+{% block content %}
+<div style="background-color: white; color: black; padding: 20px; font-family: Arial, sans-serif;">
+    <h1>Welcome to Logic Learn</h1>
+    <p>Choose your learning method:</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+        <!-- Link to Quiz Mode, including topic selection -->
+        <a href="{% url 'quizmode:quiz' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Quiz Mode</a> 
+        
+        <a style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Terms Mode</a> 
+
+        <p>Track your progress:</p>
+        <a style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Progress Tracking</a> 
+
+        <p>Select topics:</p>
+
+        <!-- Topic filter form -->
+        <form method="GET" action="{% url 'quizmode:quiz' %}" style="display: flex; flex-direction: column; gap: 10px;">
+            <select name="topic" class="form-control" style="padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                <option value="Structure and Function of the processor">Math</option>
+                <option value="CISC and RISC">Science</option>
+                <option value="Lexical Analysis">History</option>
+                <!-- Add other topics as needed -->
+            </select>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Start Quiz</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+
+        <!-- <a href="{% url 'quiz_mode' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Quiz Mode</a> -->
+        <!-- <a href="{% url 'terms_mode' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Terms Mode</a> -->
+        <!-- <a href="{% url 'progress_tracking' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Progress Tracking</a> -->
+
+
+
+
+
+       

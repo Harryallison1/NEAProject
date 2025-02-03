@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+</head>
+<body>
+    <h1>{{ username }}'s Progress</h1>
+    <p>Completed tasks: {{ completed_tasks }} / {{ total_tasks }}</p>
+    <p>Progress: {{ progress_percentage }}%</p>
+
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>

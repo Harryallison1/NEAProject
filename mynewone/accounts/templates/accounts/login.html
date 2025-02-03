@@ -1,0 +1,35 @@
+{% extends "introduction/base.html" %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form.non_field_errors %}
+        <div class="error">{{ form.non_field_errors }}</div>
+        {% endif %}
+        
+        <input type="hidden" name="next" value="{% url 'main_menu' %}"> <!-- THIS LINE HERE -->
+
+
+        <button type="submit">Login</button>
+        
+        
+
+        
+    
+    </form>
+{% endblock %}
+
+{% block extra_styles %}
+    <style>
+        main {
+            background-image: none;  /* Removes background image */
+            background-color: white; 
+        }
+    </style>
+{% endblock %}

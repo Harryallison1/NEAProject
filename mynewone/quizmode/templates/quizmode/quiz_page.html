@@ -1,0 +1,47 @@
+{% extends "introduction/base.html" %} <!-- Extending the base template -->
+
+{% block title %}Quiz Page - {{ topic }}{% endblock %} <!-- Override the title block -->
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Quiz on Topic: {{ topic }}</h1>
+        <p>Questions Remaining: {{ remaining_questions }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Display the current question -->
+            <div class="form-group">
+                <h2>{{ questions[current_question_index].question_text }}</h2>
+            </div>
+            
+            <!-- Display the possible answers as radio buttons -->
+            <div class="form-check">
+                <input type="radio" id="answer1" name="answer" class="form-check-input" value="{{ questions[current_question_index].correct_answer }}">
+                <label for="answer1" class="form-check-label">{{ questions[current_question_index].correct_answer }}</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="answer2" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer1 }}">
+                <label for="answer2" class="form-check-label">{{ questions[current_question_index].wrong_answer1 }}</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="answer3" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer2 }}">
+                <label for="answer3" class="form-check-label">{{ questions[current_question_index].wrong_answer2 }}</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="answer4" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer3 }}">
+                <label for="answer4" class="form-check-label">{{ questions[current_question_index].wrong_answer3 }}</label>
+            </div>
+
+            <!-- Submit button for answering the question -->
+            <button type="submit" class="btn btn-primary mt-3">Submit Answer</button>
+        </form>
+
+        {% if feedback %}
+            <div class="alert alert-info mt-4">
+                <p>{{ feedback }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "introduction/base.html" %}    <!-- This is the template for the about Logic Learn page -->
+                                        <!-- This template inherits from the base template -->
+{% block title %}                         
+About Logic Learn                       
+{% endblock %}                <!-- This is helpful as it allows me to inherit the website header and styles-->
+                            <!--Therefore I do not have to keep re writing the same code for each template-->
+{% block content %}            <!-- All i have to do is modify the content of each template as shown-->
+<h1>About Logic Learn</h1>
+<p>Logic Learn is an innovative learning platform designed to help students master topics through quizzes, progress tracking, and personalised learning resources. My goal is to make learning engaging, efficient, and accessible for everyone.</p>
+
+<h2>Key Features:</h2>
+<ul>
+    <li>Interactive quizzes to test and improve your knowledge.</li>
+    <li>Progress tracking to help you monitor your achievements.</li>
+    <li>Topic-specific study materials to enhance your learning.</li>
+    <li>A user-friendly interface for an amazing experience.</li>
+</ul>
+
+<p>Join Logic Learn today and take your learning to the next level!</p>
+{% endblock %}
+
+{% block extra_styles %}
+<style>
+    p {
+        max-width: 600px;
+        line-height: 1.6;
+        word-wrap: break-word;
+        margin: 20px auto;
+    }
+</style>
+{% endblock %}

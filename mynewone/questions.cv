@@ -1,0 +1,11 @@
+question,correct_answer,wrong_answer1,wrong_answer2,wrong_answer3,topic
+"What is the purpose of the ALU in a CPU?",Performs arithmetic and logical operations,Stores data temporarily,Manages input/output operations,Decodes instructions,Structure and Function of the Processor
+"What component of the CPU is responsible for fetching, decoding, and executing instructions?",Control Unit,Cache,Registers,ALU,Structure and Function of the Processor
+"What is the role of registers in a CPU?",Stores small amounts of high-speed data,Manages input and output devices,Controls the execution of instructions,Acts as the primary storage unit,Structure and Function of the Processor
+"Which register holds the address of the next instruction to be fetched?",Program Counter,Memory Address Register,Memory Data Register,Accumulator,Structure and Function of the Processor
+"What is the purpose of the Memory Data Register (MDR)?",Holds the data being transferred to or from memory,Stores the address of the next instruction,Holds the result of calculations,Controls the flow of instructions,Structure and Function of the Processor
+"What does the Control Unit (CU) do in the CPU?",Manages the execution of instructions,Stores frequently accessed data,Performs mathematical operations,Increases processing speed,Structure and Function of the Processor
+"Which component temporarily stores frequently used instructions to speed up processing?",Cache,Accumulator,Memory Address Register,Clock,Structure and Function of the Processor
+"What happens during the fetch stage of the fetch-decode-execute cycle?",The CPU retrieves an instruction from memory,The CPU performs calculations,The CPU sends data to an output device,The CPU executes the instruction,Structure and Function of the Processor
+"What is the function of the accumulator in the CPU?",Stores intermediate results of calculations,Manages system interrupts,Holds the current instruction being executed,Connects the CPU to external storage,Structure and Function of the Processor
+"What determines the speed of the fetch-decode-execute cycle?",Clock speed,Cache size,Number of registers,Amount of RAM,Structure and Function of the Processor

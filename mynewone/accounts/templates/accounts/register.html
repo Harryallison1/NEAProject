@@ -1,0 +1,28 @@
+{% extends "introduction/base.html" %}
+
+{% block title %}
+Create an account
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+
+{% if next %}
+    <p>Redirecting you back to: {{ next }}</p>
+{% endif %}
+
+<p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a></p>
+{% endblock %}
+
+{% block extra_styles %}
+    <style>
+        main {
+            background-image: none;  /* Removes background image */
+            background-color: white; 
+        }
+    </style>
+{% endblock %}
