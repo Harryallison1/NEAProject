@@ -27,4 +27,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('mainmenu.urls')),
     path('quizmode/', include('quizmode.urls')),
+    path('revisionmode/', include('revisionmode.urls')),
+    path('progresstracker/', include('progresstracker.urls')),
+    path('termsmode/', include('termsmode.urls')),
 ]

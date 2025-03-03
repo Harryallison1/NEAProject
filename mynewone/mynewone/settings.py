@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'mainmenu',
     'revisionmode',
     'quizmode',
+    'progresstracker',
+    'termsmode',
 ]
 
 MIDDLEWARE = [

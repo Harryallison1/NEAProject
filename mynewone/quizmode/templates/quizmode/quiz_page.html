@@ -1,47 +1,55 @@
-{% extends "introduction/base.html" %} <!-- Extending the base template -->
+{% extends 'introduction/base.html' %}
 
-{% block title %}Quiz Page - {{ topic }}{% endblock %} <!-- Override the title block -->
+{% block title %}Quiz Mode{% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h1>Quiz on Topic: {{ topic }}</h1>
-        <p>Questions Remaining: {{ remaining_questions }}</p>
+<div id="quiz-container">
+    <h2 id="question-text">{{ question.question_text }}</h2>
 
-        <form method="POST">
-            {% csrf_token %}
-            
-            <!-- Display the current question -->
-            <div class="form-group">
-                <h2>{{ questions[current_question_index].question_text }}</h2>
-            </div>
-            
-            <!-- Display the possible answers as radio buttons -->
-            <div class="form-check">
-                <input type="radio" id="answer1" name="answer" class="form-check-input" value="{{ questions[current_question_index].correct_answer }}">
-                <label for="answer1" class="form-check-label">{{ questions[current_question_index].correct_answer }}</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" id="answer2" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer1 }}">
-                <label for="answer2" class="form-check-label">{{ questions[current_question_index].wrong_answer1 }}</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" id="answer3" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer2 }}">
-                <label for="answer3" class="form-check-label">{{ questions[current_question_index].wrong_answer2 }}</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" id="answer4" name="answer" class="form-check-input" value="{{ questions[current_question_index].wrong_answer3 }}">
-                <label for="answer4" class="form-check-label">{{ questions[current_question_index].wrong_answer3 }}</label>
-            </div>
+    <!-- 4Buttons, each displaying a possbile answer-->
+    <!-- onclick=submitans triggers the function submitAnswer when the button is clicked -->
+    <div id="answer-buttons">
+        <button onclick="submitAnswer(this, '{{ question.correct_answer }}')" style="display: block; margin-bottom: 10px;">{{ question.correct_answer }}</button>
+        <button onclick="submitAnswer(this, '{{ question.wrong_answer1 }}')" style="display: block; margin-bottom: 10px;">{{ question.wrong_answer1 }}</button>
+        <button onclick="submitAnswer(this, '{{ question.wrong_answer2 }}')" style="display: block; margin-bottom: 10px;">{{ question.wrong_answer2 }}</button>
+        <button onclick="submitAnswer(this, '{{ question.wrong_answer3 }}')" style="display: block;">{{ question.wrong_answer3 }}</button>
+    </div>    
 
-            <!-- Submit button for answering the question -->
-            <button type="submit" class="btn btn-primary mt-3">Submit Answer</button>
-        </form>
+    <p id="feedback"></p> <!--Para element with id feedback where feedback from server will be displayed dynamically-->
+    <p>Remaining Questions: <span id="remaining">{{ remaining_questions }}</span></p> <!--Displays remaning number of qs-->
+</div>
 
-        {% if feedback %}
-            <div class="alert alert-info mt-4">
-                <p>{{ feedback }}</p>
-            </div>
-        {% endif %}
-    </div>
+<script> 
+function submitAnswer(button, answer) { 
+    fetch("", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/x-www-form-urlencoded" 
+        },
+        body: "answer=" + encodeURIComponent(answer)
+    })
+    .then(response => response.json())
+    .then(data => {
+        let feedback = document.getElementById("feedback");
+        let remaining = document.getElementById("remaining");
 
+        feedback.innerText = data.feedback;
+
+        if (data.is_correct) {
+            button.style.backgroundColor = "green";
+        } else {
+            button.style.backgroundColor = "red";
+        }
+
+        remaining.innerText = data.remaining_questions;
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
 {% endblock %}
+

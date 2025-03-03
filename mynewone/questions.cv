@@ -9,3 +9,43 @@ question,correct_answer,wrong_answer1,wrong_answer2,wrong_answer3,topic
 "What happens during the fetch stage of the fetch-decode-execute cycle?",The CPU retrieves an instruction from memory,The CPU performs calculations,The CPU sends data to an output device,The CPU executes the instruction,Structure and Function of the Processor
 "What is the function of the accumulator in the CPU?",Stores intermediate results of calculations,Manages system interrupts,Holds the current instruction being executed,Connects the CPU to external storage,Structure and Function of the Processor
 "What determines the speed of the fetch-decode-execute cycle?",Clock speed,Cache size,Number of registers,Amount of RAM,Structure and Function of the Processor
+"What does CISC stand for?",Complex Instruction Set Computing,Centralized Instruction Set Computing,Complex Integrated System Control,Computer Instruction Storage Control,CISC and RISC
+"What does RISC stand for?",Reduced Instruction Set Computing,Random Instruction Set Computing,Rapid Integrated System Control,Reorganized Instruction Set Circuit,CISC and RISC
+"Which type of processor typically has a larger instruction set?",CISC,RISC,GPU,ARM,CISC and RISC
+"Which type of processor is designed to execute simpler instructions in fewer clock cycles?",RISC,CISC,ALU,Microcontroller,CISC and RISC
+"Which processor type relies on hardware to execute complex instructions?",CISC,RISC,FPGA,Embedded System,CISC and RISC
+"Which processor architecture typically requires more RAM and compiler optimization?",RISC,CISC,ASIC,Quantum Processor,CISC and RISC
+"Which processor type is commonly used in embedded systems and mobile devices?",RISC,CISC,Mainframe,Supercomputer,CISC and RISC
+"Which of the following is a characteristic of RISC architecture?",Uniform instruction length,Variable instruction length,Complex addressing modes,Microprogramming,CISC and RISC
+"Which of the following is an advantage of RISC over CISC?",Higher performance per watt,More complex hardware,Slower execution times,Greater reliance on microcode,CISC and RISC
+"Which architecture is typically used in modern desktop processors?",CISC,RISC,Microcontroller,FPGA,CISC and RISC
+"What is the primary purpose of lexical analysis?","To convert source code into tokens","To execute the program","To optimise the code","To generate machine code","Lexical Analysis"
+"Which component performs lexical analysis in a compiler?","Lexical Analyser","Syntax Analyser","Semantic Analyser","Code Generator","Lexical Analysis"
+"What is a token in lexical analysis?","A sequence of characters that form a meaningful unit","A function in the source code","An error in the code","A compiled program","Lexical Analysis"
+"Which of the following is NOT a type of token?","Syntax Tree","Keyword","Identifier","Operator","Lexical Analysis"
+"What is a lexeme?","A sequence of characters that matches a pattern for a token","A compiled version of a program","A high-level programming language","A syntax error","Lexical Analysis"
+"Which tool is commonly used for lexical analysis?","Lex","Debugger","Assembler","Linker","Lexical Analysis"
+"What is the role of a symbol table in lexical analysis?","To store identifiers and their attributes","To execute machine code","To parse syntax","To generate assembly code","Lexical Analysis"
+"Which of the following is an example of a keyword?","if","variable","funcName","#define","Lexical Analysis"
+"What does a lexical analyser remove from the source code?","Whitespace and comments","Keywords","Identifiers","Operators","Lexical Analysis"
+"What is the output of a lexical analyser?","A stream of tokens","An abstract syntax tree","Optimised machine code","Executable program","Lexical Analysis"
+"What is the purpose of a router in a network?","To forward data packets between networks","To connect devices using Ethernet","To provide IP addresses to devices","To increase internet speed","Networks"
+"What is the function of a switch in a network?","To forward data to the correct device based on MAC addresses","To assign IP addresses to devices","To connect different networks","To provide internet access","Networks"
+"What is the difference between a LAN and a WAN?","LANs cover a small area, while WANs cover large geographical areas","LANs use wireless technology, while WANs use cables","LANs are slower than WANs","LANs connect multiple cities, while WANs connect a single building","Networks"
+"Which protocol is used to assign IP addresses dynamically?","DHCP","TCP","HTTP","FTP","Networks"
+"What is the main purpose of the TCP protocol?","To ensure reliable data transmission","To assign IP addresses","To encrypt network traffic","To establish a direct connection between two devices","Networks"
+"What does DNS stand for?","Domain Name System","Data Network Service","Digital Network Security","Dynamic Naming System","Networks"
+"Which network topology connects all devices to a central hub?","Star","Bus","Ring","Mesh","Networks"
+"What is the purpose of an IP address?","To uniquely identify a device on a network","To increase network speed","To provide internet access","To store website data","Networks"
+"Which of the following is an example of a private IP address?","192.168.1.1","8.8.8.8","23.45.67.89","151.101.1.67","Networks"
+"What is the main function of a firewall in a network?","To filter incoming and outgoing traffic for security","To increase internet speed","To assign MAC addresses to devices","To connect multiple networks","Networks"
+"What is the purpose of HTML?", "To structure content on the web", "To style content on the web", "To create dynamic behavior", "To connect different websites", "Web Technologies"
+"What does CSS stand for?", "Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets", "Web Technologies"
+"What is the role of JavaScript in web development?", "To add interactivity to web pages", "To structure the content", "To style the page layout", "To store data on the server", "Web Technologies"
+"What is the function of a web browser?", "To retrieve and display web pages", "To design web pages", "To host websites", "To write server-side code", "Web Technologies"
+"What is the difference between HTML and CSS?", "HTML structures content, CSS styles it", "HTML stores data, CSS displays images", "HTML connects pages, CSS adds functionality", "HTML creates interactivity, CSS structures content", "Web Technologies"
+"What is a domain name?", "An address used to access a website", "A unique identifier for a server", "A type of server software", "A programming language used in web design", "Web Technologies"
+"Which of the following is used for client-side scripting?", "JavaScript", "PHP", "SQL", "Python", "Web Technologies"
+"Which protocol is used to transfer web pages?", "HTTP", "FTP", "SMTP", "POP3", "Web Technologies"
+"What is the purpose of a web server?", "To serve web pages to users' browsers", "To design websites", "To store users' data", "To process client requests", "Web Technologies"
+"Which technology is used for dynamic content on websites?", "JavaScript", "HTML", "CSS", "XML", "Web Technologies"

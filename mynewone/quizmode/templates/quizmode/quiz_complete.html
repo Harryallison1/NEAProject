@@ -1,0 +1,10 @@
+{% extends 'introduction/base.html' %}
+
+{% block title %}Quiz Complete{% endblock %}
+
+{% block content %}
+<h2>Quiz Completed!</h2>
+<p>You got {{ correct_answers }} out of {{ total_questions }} correct.</p>
+<a href="{% url 'main_menu' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px; display: block; margin-bottom: 10px;">Back to Main Menu</a> 
+<a href="{% url 'quiz' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px; display: block;">Play Again</a> 
+{% endblock %}

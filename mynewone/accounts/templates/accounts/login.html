@@ -13,10 +13,12 @@ Log in
         <div class="error">{{ form.non_field_errors }}</div>
         {% endif %}
         
-        <input type="hidden" name="next" value="{% url 'main_menu' %}"> <!-- THIS LINE HERE -->
+        <input type="hidden" name="next" value="{% url 'main_menu' %}"> 
 
 
         <button type="submit">Login</button>
+
+        <p>Don't have an account? <a href="{% url 'register' %}"><button type="button">Sign Up</button></a></p>
         
         
 

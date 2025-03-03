@@ -13,11 +13,11 @@ main {
     /*background-image: url("/static/images/background2.avif"); */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Keep content horizontally centered */
-    height: 100vh; /* Full height of the viewport */
-    text-align: center; /* Center text */
-    padding-top: 50px; /* Space from the top */
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 100vh; 
+    text-align: center; 
+    padding-top: 50px; 
    
    
 }

@@ -1,0 +1,44 @@
+{% extends 'introduction/base.html' %}
+
+{% block content %}
+<div id="terms-container">
+    <h2 id="question-text">{{ question.question_text }}</h2>
+
+    <input type="text" id="user-answer" placeholder="Type your answer here">
+    <button onclick="checkAnswer()">Check Answer</button>
+    
+    <p id="feedback"></p>
+    <p>Remaining Questions: <span id="remaining">{{ remaining_questions }}</span></p> 
+</div>
+
+<script>
+function checkAnswer() { 
+    let userAnswer = document.getElementById("user-answer").value.trim();
+    
+    if (userAnswer == "") {
+        alert("Written answer is required before moving on")
+        return;
+    }
+    fetch("", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/x-www-form-urlencoded" 
+        },
+        body: "answer=" + encodeURIComponent(userAnswer)
+    })
+    .then(response => response.json())
+    .then(data => {
+        let feedback = document.getElementById("feedback");
+        let remaining = document.getElementById("remaining");
+        
+        feedback.innerText = data.feedback;
+        
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
+    })
+    .catch(error => console.error('Error:', error));
+}
+</script>
+{% endblock %}

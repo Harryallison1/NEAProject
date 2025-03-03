@@ -1,18 +1,18 @@
 
 <!DOCTYPE html> <!-- This defines the document type and version of html -->
-{% load static %} <!-- Django template tag that loads the static files in the template -->
-<html lang="en"> <!--Opening html tag with language attribute for english -->
-<head> <!-- head section contains metadata and links to bootstrap which comes with styles -->
+{% load static %} <!-- This is a Django template tag that loads the static files in the template -->
+<html lang="en"> 
+<head> <!-- This head section contains metadata and links to bootstrap which comes with styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit-no">
 
-    <title>{% block title %} The Website {% endblock %}</title> <!-- This defines the title of the page -->
-   <!-- block title tag allows child templates to override the default title "The Website" -->
+    <title>{% block title %} The Website {% endblock %}</title> <!-- This gives the title of the page -->
+   <!-- block title tag will allow child templates to override the default title "The Website" -->
 
-    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!--Loads a custom CSS file.-->
-    <!-- It is linked using the static tag which tells Django to look in the static folder for the file -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!--Links to my static CSS file -->
+    
 
     {% block extra_styles %}
     {% endblock %}
@@ -28,24 +28,24 @@
         
     </header>
 
-    <main> <!-- Main content of page -->
-        <div class="overlay">
-            <div id="content" name="content">
-           
-            {% block content %} <!-- This block allows child templates to define their main content -->
-                <h1>Welcome to Logic Learn!</h1> <!-- All this content is the content for the home page -->
+    <main> 
+        {% block content %}
+        <div style="background-color: white; color: black; padding: 20px; font-family: Arial, sans-serif;">
+            <h1>Welcome to Logic Learn</h1>
+            <p>Choose an option:</p>
+    
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                
+                <a href="{% url 'register' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Sign Up</a> 
+        
+                <a href="{% url 'login' %}"style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Login</a> 
 
-                <h2>Choose an option:</h2>
-                <ul>
-                    <li><a href="{% url 'register' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    
-                    <!-- Add more options here -->
-                    <li><a href="{% url 'about' %}">What is Logic Learn?</a></li>
-                </ul>
+                <a href="{% url 'about' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">What is Logic Learn?</a> 
+
             </div>
-            {% endblock %}
         </div>
+        {% endblock %}
+        
         
     </main>
 

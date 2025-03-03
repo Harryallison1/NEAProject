@@ -1,8 +1,8 @@
-from django.db import models
+from django.db import models #imports djangos built in models which allows me to define database models
 
 # Create your models here.
 
-class Question(models.Model):
+class Question(models.Model): #this defines a new model (database table) called Question, inherits from models.model
     question_text = models.TextField()
     correct_answer = models.CharField(max_length=255)
     wrong_answer1 = models.CharField(max_length=255)

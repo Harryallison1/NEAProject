@@ -7,24 +7,32 @@
     
     <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
         <!-- Link to Quiz Mode, including topic selection -->
-        <a href="{% url 'quizmode:quiz' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Quiz Mode</a> 
-        
-        <a style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Terms Mode</a> 
+        {% if request.session.selected_topic %}
+            <a href="{% url 'quiz' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Quiz Mode</a> 
+        {% else %}
+            <a href="#" onclick="alert('Please select a topic before starting the quiz.'); return false;" 
+                style="padding: 10px 20px; background: grey; color: white; text-decoration: none; border-radius: 5px; cursor: not-allowed;">
+                Quiz Mode (Select Topic First)
+            </a>
+        {% endif %}
+        <a href="{% url 'terms' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Terms Mode</a> 
 
         <p>Track your progress:</p>
-        <a style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Progress Tracking</a> 
+        <a href="{% url 'userprogress' %}" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Progress Tracking</a> 
 
         <p>Select topics:</p>
 
-        <!-- Topic filter form -->
-        <form method="GET" action="{% url 'quizmode:quiz' %}" style="display: flex; flex-direction: column; gap: 10px;">
+        <!-- topic filter form -->
+        <form method="POST" action="{% url 'save_topic' %}" style="display: flex; flex-direction: column; gap: 10px;">
+            {% csrf_token %}
             <select name="topic" class="form-control" style="padding: 10px; background: #f8f9fa; border-radius: 5px;">
-                <option value="Structure and Function of the processor">Math</option>
-                <option value="CISC and RISC">Science</option>
-                <option value="Lexical Analysis">History</option>
-                <!-- Add other topics as needed -->
+                <option value="Structure and Function of the Processor">Structure and Function of the processor</option>
+                <option value="CISC and RISC">CISC and RISC</option>
+                <option value="Lexical Analysis">Lexical Analysis</option>
+                <option value="Networks">Networks</option>
+                
             </select>
-            <button type="submit" class="btn btn-primary" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Start Quiz</button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 5px;">Save Topic</button>
         </form>
     </div>
 </div>
