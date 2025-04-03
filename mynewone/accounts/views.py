@@ -13,7 +13,7 @@ def register(request):
             return redirect("/introduction") #print user password also used for debugging
         else:
             print("form invalid") #debugging purposes
-            print(form)
+            #print(form)
 
             if 'password1' in form.errors:
                 #Gets the error message for password1
@@ -23,7 +23,7 @@ def register(request):
                 print("Password1 is valid, but there are other form errors.")
 
             #prints the entire form errors for debugging
-            print(form.errors)
+            #print(form.errors)
             return render(request, "accounts/register.html", {"form": form })#Before this was not here neither were the if statements checking if the form was valid. Once i added this when the form was not valid it rdirected the user to the register template and in the template it loops through what the user has not done to successfully create an account
         #if the form is invalid it returns the same registration template with the form object
         #which now contains the user's inputs and the associated validation errors.
